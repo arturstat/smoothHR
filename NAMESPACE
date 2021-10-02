@@ -1,0 +1,8 @@
+importFrom("graphics", abline, arrows, axis, matplot, polygon, text)
+importFrom("splines", ns)
+importFrom("stats", approx, as.formula, na.omit, predict, qnorm, quantile, terms)
+importFrom("survival", coxph, cox.zph, pspline)
+export(smoothHR, dfmacox, plot.HR, predict.HR, print.HR)
+S3method(plot, HR)
+S3method(predict, HR)
+S3method(print, HR)

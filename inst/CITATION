@@ -1,0 +1,38 @@
+PKG <- "smoothHR"
+citHeader( paste("To cite the R package ", PKG, " in publications use:", sep="") )
+
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
+vers <- paste("R package version", meta$Version)
+url <- paste("http://CRAN.R-project.org/package=", PKG, sep="")
+title <- "smoothHR: Smooth Hazard Ratio Curves Taking a Reference Value"
+
+citEntry(
+	entry       = "Manual",
+	title       = title,
+	author      = personList(
+                  as.person("Artur Ara\\'{u}jo"),
+                  as.person("Lu\\'{i}s Meira-Machado")
+                ),
+	year        = year,
+	note        = vers,
+	url         = url,
+	textVersion = paste( "Artur Araújo and Luís Meira-Machado (", year, "). ", title, ". ", vers, " URL ", url, sep="")
+)
+
+citEntry(
+  entry       = "Article",
+  title       = "smoothHR: An R Package for Pointwise Nonparametric Estimation of Hazard Ratio Curves of Continuous Predictors",
+  author      = personList(
+                  as.person("Lu\\'{i}s Meira-Machado"),
+                  as.person("Carmen Cadarso-Su\\'{a}rez"),
+                  as.person("Francisco Gude"),
+                  as.person("Artur Ara\\'{u}jo")
+                ),
+  journal     = "Computational and Mathematical Methods in Medicine",
+  issn        = "1748-6718",
+  year        = "2013",
+  volume      = "2013",
+  pages       = "1--11",
+  doi         = "10.1155/2013/745742",
+  textVersion  = "Luís Meira-Machado, Carmen Cadarso-Suárez, Francisco Gude, and Artur Araújo, “smoothHR: An R Package for Pointwise Nonparametric Estimation of Hazard Ratio Curves of Continuous Predictors,” Computational and Mathematical Methods in Medicine, vol. 2013, Article ID 745742, 11 pages, 2013. doi:10.1155/2013/745742"
+)
