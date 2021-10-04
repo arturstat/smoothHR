@@ -21,9 +21,9 @@
 
 \author{Artur Araújo and Luís Meira-Machado}
 
-%\references{
-%% ~put references to the literature/web site here ~
-%}
+\references{
+Meira-Machado, L. and Cadarso-Suárez, C. and Gude, F. and Araújo, A. (2013). smoothHR: An R Package for Pointwise Nonparametric Estimation of Hazard Ratio Curves of Continuous Predictors, Computational and Mathematical Methods in Medicine, 2013, Article ID 745742, 11 pages. doi:10.1155/2013/745742
+}
 
 %\note{   %%  ~~further notes~~  %}
 
