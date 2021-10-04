@@ -40,7 +40,7 @@ status.event=NULL)}
 \author{Artur Araújo and Luís Meira-Machado}
 
 \references{
-Cadarso-Suarez, C. and Meira-Machado, L. and Kneib, T. and Gude, F. (2010). Flexible hazard ratio curves for continuous predictors in multi-state models: a P-spline approach. *Statistical Modelling*, **10(3)**, 291-314.
+Cadarso-Suarez, C. and Meira-Machado, L. and Kneib, T. and Gude, F. (2010). Flexible hazard ratio curves for continuous predictors in multi-state models: an application to breast cancer data. Statistical Modelling, 10(3), 291-314. doi:10.1177/1471082X0801000303
 
 Meira-Machado, L. and Cadarso-Suárez, C. and Gude, F. and Araújo, A. (2013). smoothHR: An R Package for Pointwise Nonparametric Estimation of Hazard Ratio Curves of Continuous Predictors, Computational and Mathematical Methods in Medicine, 2013, Article ID 745742, 11 pages. doi:10.1155/2013/745742
 }
