@@ -28,6 +28,12 @@
 
 \references{
 	Carmen Cadarso-Suarez, Luis Meira-Machado, Thomas Kneib and Francisco Gude. Flexible hazard ratio curves for continuous predictors in multi-state models: a P-spline approach. Statistical Modelling, 2010, 10:291-314.
+
+	Eilers, Paul H. and Marx, Brian D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11, 89-121.
+
+	Hosmer, D.W. and Lemeshow, S. and May, S. (2008) Applied Survival Analysis: Regression Modeling of Time to Event Data: Second Edition, John Wiley and Sons Inc., New York, NY.
+
+	Hurvich, C.M. and Simonoff, J.S. and Tsai, Chih-Ling (1998). Smoothing parameter selection in nonparametric regression using an improved Akaike information criterion, JRSSB, volume 60, 271–293.
 }
 
 \keyword{package}
