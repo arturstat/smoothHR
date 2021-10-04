@@ -41,7 +41,7 @@ ref.label=NULL, col, main, xlab, ylab, lty, xlim, ylim, xx, ...)}
 \author{Artur Araújo and Luís Meira-Machado}
 
 \references{
-	Carmen Cadarso-Suarez, Luis Meira-Machado, Thomas Kneib and Francisco Gude. Flexible hazard ratio curves for continuous predictors in multi-state models: a P-spline approach. Statistical Modelling, 2010, 10:291-314
+	Carmen Cadarso-Suarez, Luis Meira-Machado, Thomas Kneib and Francisco Gude. Flexible hazard ratio curves for continuous predictors in multi-state models: a P-spline approach. Statistical Modelling, 2010, 10(3), 291-314.
 }
 
 %\note{

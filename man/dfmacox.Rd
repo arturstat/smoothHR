@@ -51,9 +51,9 @@ smoother, method, mindf=NULL, maxdf=NULL, ntimes=NULL, data)}
 \author{Artur Araújo and Luís Meira-Machado}
 
 \references{
-	Eilers, Paul H. and Marx, Brian D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11, 89-121.
+	Eilers, Paul H. and Marx, Brian D. (1996). Flexible smoothing with B-splines and penalties. Statistical Science, 11(2), 89-121.
 
-	Hurvich, C.M. and Simonoff, J.S. and Tsai, Chih-Ling (1998). Smoothing parameter selection in nonparametric regression using an improved Akaike information criterion, JRSSB, volume 60, 271–293.
+	Hurvich, C.M. and Simonoff, J.S. and Tsai, Chih-Ling (1998). Smoothing parameter selection in nonparametric regression using an improved Akaike information criterion, JRSSB, 60(2), 271–293.
 }
 
 %\note{
