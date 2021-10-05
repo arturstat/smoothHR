@@ -5,6 +5,7 @@
 \section{Changes in version 1.0.3}{
   \itemize{
     \item{Improved the documentation.}
+    \item{Removed ftp links.}
   }
 }
 
