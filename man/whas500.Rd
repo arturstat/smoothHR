@@ -17,8 +17,7 @@
 \source{
 	Worcester Heart Attack Study data from Dr. Robert J. Goldberg of
 	the Department of Cardiology at the University of Massachusetts Medical
-	School. This data is also available at the following Wiley's FTP site:
-	ftp://ftp.wiley.com/public/sci_tech_med/survival
+	School.
 }
 
 \references{
