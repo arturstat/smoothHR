@@ -3,8 +3,8 @@
 \alias{plot.HR}
 \title{Flexible hazard ratio curves taking a specific covariate value as reference}
 \description{Plots flexible hazard ratio curves allowing non-linear relationships between continuous predictors and survival.
-	To better understand the effects that each continuous covariate has on the outcome, results are expressed in terms of hazard ratio curves,
-	taking a specific covariate value as reference. Confidence bands for these curves are also derived.
+To better understand the effects that each continuous covariate has on the outcome, results are expressed in terms of hazard ratio curves,
+taking a specific covariate value as reference. Confidence bands for these curves are also derived.
 }
 \usage{\method{plot}{HR}(x, predictor, prob=NULL, pred.value=NULL, conf.level=0.95, round.x=NULL,
 ref.label=NULL, col, main, xlab, ylab, lty, xlim, ylim, xx, ...)}

@@ -3,8 +3,7 @@
 \alias{print.HR}
 \title{print method for a Smooth Hazard Ratio Object}
 \description{
-	This class of objects is returned by the HR class of functions to represent smooth hazard ratio curve.
-	Objects of this class have methods for \code{print}, \code{predict} and \code{plot}.
+This class of objects is returned by the HR class of functions to represent smooth hazard ratio curve. Objects of this class have methods for \code{print}, \code{predict} and \code{plot}.
 }
 \usage{\method{print}{HR}(x, ...)}
 
