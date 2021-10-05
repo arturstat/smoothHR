@@ -3,7 +3,7 @@ citHeader( paste("To cite the R package ", PKG, " in publications use:", sep="")
 
 year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
 vers <- paste("R package version", meta$Version)
-url <- paste("http://CRAN.R-project.org/package=", PKG, sep="")
+url <- paste("https://CRAN.R-project.org/package=", PKG, sep="")
 title <- "smoothHR: Smooth Hazard Ratio Curves Taking a Reference Value"
 
 citEntry(
