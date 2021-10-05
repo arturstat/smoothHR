@@ -20,8 +20,6 @@ Authors@R: c(
 		comment = c(ORCID = "0000-0002-8577-7665")
 	) )
 Depends: R (>= 3.1.0), survival, splines
-Suggests: knitr
-VignetteBuilder: knitr
 Description: Provides flexible hazard ratio curves allowing non-linear
         relationships between continuous predictors and survival. To
         better understand the effects that each continuous covariate
