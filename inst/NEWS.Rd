@@ -19,7 +19,7 @@
     \item{Improved the documentation.}
     \item{Added research article to the CITATION file.}
     \item{Removed unnecessary require calls from R code.}
-	}
+  }
 }
 
 \section{Changes in version 1.0}{
