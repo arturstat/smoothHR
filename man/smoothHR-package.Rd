@@ -13,9 +13,9 @@
 	\tabular{ll}{
 		Package: \tab smoothHR\cr
 		Type: \tab Package\cr
-		Version: \tab 1.0.2\cr
-		Date: \tab 2015-10-29\cr
-		License: \tab GPL (>= 2)\cr
+		Version: \tab 1.0.3\cr
+		Date: \tab 2021-10-05\cr
+		License: \tab GPL-3\cr
 		LazyLoad: \tab yes\cr
 		LazyData: \tab yes\cr
 	}

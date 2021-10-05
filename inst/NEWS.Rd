@@ -2,6 +2,12 @@
 
 \title{NEWS file for the smoothHR package}
 
+\section{Changes in version 1.0.3}{
+	\itemize{
+		\item{Improved the documentation.}
+	}
+}
+
 \section{Changes in version 1.0.2}{
 	\itemize{
 		\item{Corrected NAMESPACE file.}
