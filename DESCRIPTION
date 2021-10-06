@@ -21,11 +21,11 @@ Authors@R: c(
 	) )
 Depends: R (>= 3.1.0), survival, splines
 Description: Provides flexible hazard ratio curves allowing non-linear
-        relationships between continuous predictors and survival. To
-        better understand the effects that each continuous covariate
-        has on the outcome, results are ex pressed in terms of hazard
-        ratio curves, taking a specific covariate value as reference.
-        Confidence bands for these curves are also derived.
+  relationships between continuous predictors and survival.
+  To better understand the effects that each continuous covariate
+  has on the outcome, results are ex pressed in terms of hazard
+  ratio curves, taking a specific covariate value as reference.
+  Confidence bands for these curves are also derived.
 License: GPL-3 | file LICENSE
 URL: https://github.com/arturstat/smoothHR
 BugReports: https://github.com/arturstat/smoothHR/issues
