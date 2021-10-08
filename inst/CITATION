@@ -43,4 +43,4 @@ citEntry(
   textVersion  = "Luís Meira-Machado, Carmen Cadarso-Suárez, Francisco Gude and Artur Araújo (2013).
   “smoothHR: An R Package for Pointwise Nonparametric Estimation of Hazard Ratio Curves of Continuous Predictors,”
   Computational and Mathematical Methods in Medicine, 2013, 11 pages. doi:10.1155/2013/745742"
-)
+);
