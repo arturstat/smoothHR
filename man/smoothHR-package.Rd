@@ -13,8 +13,8 @@ taking a specific covariate value as reference. Confidence bands for these curve
 	\tabular{ll}{
 		Package: \tab smoothHR\cr
 		Type: \tab Package\cr
-		Version: \tab 1.0.3\cr
-		Date: \tab 2021-10-06\cr
+		Version: \tab 1.0.4\cr
+		Date: \tab 2021-10-08\cr
 		License: \tab GPL-3\cr
 		LazyLoad: \tab yes\cr
 		LazyData: \tab yes\cr
