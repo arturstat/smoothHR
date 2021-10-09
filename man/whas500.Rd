@@ -21,7 +21,7 @@ School.
 }
 
 \references{
-Hosmer, D. W. and Lemeshow, S. and May, S. (2008). \emph{Applied Survival Analysis: Regression Modeling of Time to Event Data: Second Edition}, John Wiley and Sons Inc., New York, NY.
+Hosmer, D. W. and Lemeshow, S. and May, S. (2008) \emph{Applied Survival Analysis: Regression Modeling of Time to Event Data: Second Edition}, John Wiley and Sons Inc., New York, NY.
 }
 
 \examples{

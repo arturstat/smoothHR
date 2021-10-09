@@ -51,11 +51,11 @@ smoother, method, mindf=NULL, maxdf=NULL, ntimes=NULL, data)}
 \author{Artur Araújo and Luís Meira-Machado}
 
 \references{
-Eilers, Paul H. and Marx, Brian D. (1996). Flexible smoothing with B-splines and penalties. \emph{Statistical Science}, \bold{11}(2), 89-121. \doi{10.1214/ss/1038425655}
+Eilers, Paul H. and Marx, Brian D. (1996) Flexible smoothing with B-splines and penalties. \emph{Statistical Science}, \bold{11}(2), 89--121. \doi{10.1214/ss/1038425655}
 
-Hurvich, C. M. and Simonoff, J. S. and Tsai, Chih-Ling (1998). Smoothing parameter selection in nonparametric regression using an improved Akaike information criterion, \emph{JRSSB}, \bold{60}(2), 271–293. \doi{10.1111/1467-9868.00125}
+Hurvich, C. M. and Simonoff, J. S. and Tsai, Chih-Ling (1998) Smoothing parameter selection in nonparametric regression using an improved Akaike information criterion. \emph{JRSSB}, \bold{60}(2), 271–-293. \doi{10.1111/1467-9868.00125}
 
-Meira-Machado, L. and Cadarso-Suárez, C. and Gude, F. and Araújo, A. (2013). smoothHR: An R Package for Pointwise Nonparametric Estimation of Hazard Ratio Curves of Continuous Predictors, \emph{Computational and Mathematical Methods in Medicine}, \bold{2013}, 11 pages. \doi{10.1155/2013/745742}
+Meira-Machado, L. and Cadarso-Suárez, C. and Gude, F. and Araújo, A. (2013) smoothHR: An R Package for Pointwise Nonparametric Estimation of Hazard Ratio Curves of Continuous Predictors. \emph{Computational and Mathematical Methods in Medicine}, \bold{2013}, 11 pages. \doi{10.1155/2013/745742}
 }
 
 %\note{
