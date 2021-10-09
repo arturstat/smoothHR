@@ -5,6 +5,7 @@
 \section{Changes in version 1.0.4}{
   \itemize{
     \item{Improved the documentation.}
+    \item{Removed LICENSE file from build.}
   }
 }
 
