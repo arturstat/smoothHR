@@ -21,7 +21,7 @@ This class of objects is returned by the HR class of functions to represent smoo
 \author{Artur Araújo and Luís Meira-Machado}
 
 \references{
-Meira-Machado, L. and Cadarso-Suárez, C. and Gude, F. and Araújo, A. (2013) smoothHR: An R Package for Pointwise Nonparametric Estimation of Hazard Ratio Curves of Continuous Predictors. \emph{Computational and Mathematical Methods in Medicine}, \bold{2013}, 11 pages. \doi{10.1155/2013/745742}
+Meira-Machado, L. and Cadarso-Suárez, C. and Gude, F. and Araújo, A. (2013). smoothHR: An R Package for Pointwise Nonparametric Estimation of Hazard Ratio Curves of Continuous Predictors. \emph{Computational and Mathematical Methods in Medicine}, \bold{2013}, 11 pages. \doi{10.1155/2013/745742}
 }
 
 %\note{   %%  ~~further notes~~  %}
