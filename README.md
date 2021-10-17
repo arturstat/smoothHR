@@ -4,6 +4,20 @@ Smooth Hazard Ratio Curves Taking a Reference Value.
 ## Description
 Provides flexible hazard ratio curves allowing non-linear relationships between continuous predictors and survival. To better understand the effects that each continuous covariate has on the outcome, results are expressed in terms of hazard ratio curves, taking a specific covariate value as reference. Confidence bands for these curves are also derived.
 
+## Installation
+If you want to use the release version of the **smoothHR** package, you can install the package from CRAN as follows:
+```r
+install.packages(pkgs="smoothHR");
+```
+If you want to use the development version of the **smoothHR** package, you can install the package from GitHub via the [**remotes** package](https://remotes.r-lib.org):
+```r
+remotes::install_github(
+  repo="arturstat/smoothHR",
+  build=TRUE,
+  build_manual=TRUE
+);
+```
+
 ## Authors
 Artur Araújo and Luís Meira-Machado <lmachado@math.uminho.pt> \
 Maintainer: Artur Araújo <artur.stat@gmail.com>
