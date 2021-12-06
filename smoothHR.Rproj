@@ -17,4 +17,3 @@ LineEndingConversion: Posix
 
 BuildType: Package
 PackageInstallArgs: --no-multiarch --with-keep.source
-PackageBuildArgs: --compact-vignettes=gs+qpdf
