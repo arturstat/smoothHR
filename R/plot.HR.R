@@ -6,7 +6,7 @@ plot.HR <- function(x, predictor, prob=NULL, pred.value=NULL, conf.level=0.95, r
 	if ( missing(round.x) ) {round.x <- 5;}
 	if ( !missing(pred.value) ) {prob <- 0.5;}
 	if ( !missing(prob) ) {
-	  if(prob < 0 | prob > 1) {stop("The argument 'prob' must be between o and 1");}
+	  if (prob < 0 | prob > 1) {stop("The argument 'prob' must be between o and 1");}
 	}
 	if ( missing(prob) & missing(pred.value) ) {prob <- 0;}
 	if ( !missing(pred.value) & !missing(xlim) ) {
@@ -15,14 +15,14 @@ plot.HR <- function(x, predictor, prob=NULL, pred.value=NULL, conf.level=0.95, r
 	if ( missing(predictor) ) {stop("Missing predictor");}
 	if ( missing(col) ) {col <- c("black", "black", "grey85");}
 	if ( missing(ylab) ) {ylab <- c("Ln HR(Z,Zref)");}
-	if ( missing(lty) ) {lty <- c(1,3);}
+	if ( missing(lty) ) {lty <- c(1, 3);}
 	ctype <- "FALSE";
 	qvalue <- (1+conf.level)/2;
 	linear.predictor <- FALSE;
 	k1 <- 9999;
 	k <- which(names(mydata) == predictor);
 	k <- c(k, k1);
-	if (k[1] == 9999) {stop ("predictor must be in data");}
+	if (k[1] == 9999) {stop("predictor must be in data");}
 	k <- k[1];
 	a <- mydata;
 	#if ( !missing(pred.value) & ( pred.value<min(a[,k]) | pred.value>max(a[,k]) ) ) {stop("The reference value is out of range of x);}
@@ -30,8 +30,8 @@ plot.HR <- function(x, predictor, prob=NULL, pred.value=NULL, conf.level=0.95, r
 	n.predictor <- names(a)[k];
 	n <- dim(a)[1];
 	if (prob == 0) {
-		eta.no.ref <- predict(fit,type = "terms");
-		if ( inherits(eta.no.ref, "numeric") ) {kp <- 1; eta.no.ref <- cbind(eta.no.ref,eta.no.ref);}
+		eta.no.ref <- predict(fit, type="terms");
+		if ( inherits(eta.no.ref, "numeric") ) {kp <- 1; eta.no.ref <- cbind(eta.no.ref, eta.no.ref);}
 		else {kp <- grep( predictor, colnames(eta.no.ref) );}
 		eta.xref <- min(eta.no.ref[,kp]);
 		ii <- which.min(eta.no.ref[,kp]);
@@ -41,7 +41,7 @@ plot.HR <- function(x, predictor, prob=NULL, pred.value=NULL, conf.level=0.95, r
 		submatriz.diseno <- fit$x[,indices];
 		if (is.matrix(submatriz.diseno) == FALSE) {linear.predictor <- TRUE;}
 		submatriz.var <- fit$var[indices, indices];
-		xref1 <- rep(fit$x[ii,indices], dim(fit$x)[1]);
+		xref1 <- rep(fit$x[ii, indices], dim(fit$x)[1]);
 		if (linear.predictor == FALSE) {
 			xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=dim(submatriz.diseno)[2], byrow=TRUE);
 		}
@@ -50,7 +50,7 @@ plot.HR <- function(x, predictor, prob=NULL, pred.value=NULL, conf.level=0.95, r
 		}
 		eta.ref1 <- fit$x[,indices]-xref1;
 		var.eta.ref1 <- rep(NA, n);
-		for (i in 1:n) {var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices,indices]%*%eta.ref1[i,];}
+		for (i in 1:n) {var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices, indices]%*%eta.ref1[i,];}
 		se.eta.ref1 <- sqrt(var.eta.ref1);
 	}
 	if (prob > 0 & prob < 1) {
@@ -61,7 +61,7 @@ plot.HR <- function(x, predictor, prob=NULL, pred.value=NULL, conf.level=0.95, r
 		if ( !missing(pred.value) ) {
 			pp <- seq(0, 1, len=1000);
 			app <- quantile(a[,k], pp);
-			qq <- which(app<=pred.value);
+			qq <- which(app <= pred.value);
 			qq1 <- max(qq);
 			prob <- qq1/1000;
 		}
@@ -73,7 +73,7 @@ plot.HR <- function(x, predictor, prob=NULL, pred.value=NULL, conf.level=0.95, r
 		submatriz.diseno <- fit$x[,indices];
 		if (is.matrix(submatriz.diseno) == FALSE) {linear.predictor <- TRUE;}
 		submatriz.var <- fit$var[indices, indices];
-		xref1 <- rep(fit$x[ord[ind.prob],indices], dim(fit$x)[1]);
+		xref1 <- rep(fit$x[ord[ind.prob], indices], dim(fit$x)[1]);
 		if (linear.predictor == FALSE) {
 			xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=dim(submatriz.diseno)[2], byrow=TRUE);
 		}
@@ -81,8 +81,8 @@ plot.HR <- function(x, predictor, prob=NULL, pred.value=NULL, conf.level=0.95, r
 			xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=1, byrow=TRUE);
 		}
 		eta.ref1 <- fit$x[,indices]-xref1;
-		var.eta.ref1 <- rep(NA,n);
-		for (i in 1:n) {var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices,indices]%*%eta.ref1[i,];}
+		var.eta.ref1 <- rep(NA, n);
+		for (i in 1:n) {var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices, indices]%*%eta.ref1[i,];}
 		se.eta.ref1 <- sqrt(var.eta.ref1);
 	}
 	if (prob == 1) {
