@@ -17,3 +17,7 @@ LineEndingConversion: Posix
 
 BuildType: Package
 PackageInstallArgs: --no-multiarch --with-keep.source
+
+PythonType: system
+PythonVersion: 3.10.5
+PythonPath: C:/Program Files/Python310/python.exe
