@@ -29,8 +29,8 @@ ref.label=NULL, col, main, xlab, ylab, lty, xlim, ylim, xx, ylog=TRUE, log=ifels
 	\item{xlim}{The range of x and y values with sensible defaults.}
 	\item{ylim}{The range of x and y values with sensible defaults.}
 	\item{xx}{Vector of values (from the variable \code{predictor}) to be shown in the x axis.}
-	\item{ylog}{logical. If \code{TRUE} plots natural logarithm of hazard ratio.}
-	\item{log}{See \code{\link{plot.default}} for details.}
+	\item{ylog}{If \code{TRUE} plots natural logarithm of hazard ratio.}
+	\item{log}{Axis logarithmic scale. See \code{\link{plot.default}} for details.}
 	\item{\dots}{Other arguments.}
 }
 
