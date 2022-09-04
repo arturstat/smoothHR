@@ -7,7 +7,8 @@ To better understand the effects that each continuous covariate has on the outco
 taking a specific covariate value as reference. Confidence bands for these curves are also derived.
 }
 \usage{\method{plot}{HR}(x, predictor, prob=NULL, pred.value=NULL, conf.level=0.95, round.x=NULL,
-ref.label=NULL, col, main, xlab, ylab, lty, xlim, ylim, xx, ylog=TRUE, log=ifelse(ylog, "", "y"), ...)}
+ref.label=NULL, col, main, xlab, ylab, lty, xlim, ylim, xx, ylog=TRUE,
+log=ifelse(ylog, "", "y"), ...)}
 
 \arguments{
 	\item{x}{An object of class HR}

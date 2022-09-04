@@ -2,7 +2,7 @@ Encoding: UTF-8
 Package: smoothHR
 Type: Package
 Version: 1.0.4
-Date: 2022-07-10
+Date: 2022-09-04
 Title: Smooth Hazard Ratio Curves Taking a Reference Value
 Authors@R: c(
 	person(
