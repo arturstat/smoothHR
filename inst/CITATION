@@ -9,8 +9,8 @@ year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl=TRUE);
 vers <- paste("R package version", meta$Version);
 url <- paste("https://CRAN.R-project.org/package=", PKG, sep="");
 
-citEntry(
-	entry       = "Manual",
+bibentry(
+	bibtype     = "Manual",
 	title       = paste(PKG, ": ", title, sep=""),
 	author      = personList(
                   as.person("Artur Ara\\'{u}jo"),
@@ -25,8 +25,8 @@ citEntry(
   )
 );
 
-citEntry(
-  entry       = "Article",
+bibentry(
+  bibtype     = "Article",
   title       = "smoothHR: An R Package for Pointwise Nonparametric Estimation of Hazard Ratio Curves of Continuous Predictors",
   author      = personList(
                   as.person("Lu\\'{i}s Meira-Machado"),
