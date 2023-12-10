@@ -39,7 +39,13 @@ log=ifelse(ylog, "", "y"), ...)}
 %%  ~~ If necessary, more details than the description above ~~
 %}
 
-\value{No value is returned.}
+\value{
+	Invisibly returns the plot data, a data.frame including the elements:
+	\item{x}{Predictor.}
+	\item{y}{Hazard ratio or log hazard ratio.}
+	\item{y.lower}{Lower bound of confidence interval.}
+	\item{y.upper}{Upper bound of confidence interval.}
+}
 
 \author{Artur Araújo and Luís Meira-Machado}
 

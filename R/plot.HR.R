@@ -261,4 +261,15 @@ plot.HR <- function(
 			text(xref, y[1], paste( n.predictor, "=", round(xref, round.x) ), adj=c(1, -0.7), ...);
 		}
 	}
+  return(
+    invisible(
+      data.frame(
+        "x"=a[jj,k],
+        "y"=tmat[jj,1],
+        "y.lower"=tmat[jj,2],
+        "y.upper"=tmat[jj,3],
+        row.names=NULL
+  	  )
+    )
+  );
 } # plot.HR
