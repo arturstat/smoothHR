@@ -5,6 +5,7 @@
 \section{Changes in version 1.0.5}{
   \itemize{
     \item{plot.HR now invisibly returns the plot data.}
+    \item{Updated CITATION file.}
   }
 }
 
