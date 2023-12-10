@@ -2,6 +2,12 @@
 
 \title{NEWS file for the smoothHR package}
 
+\section{Changes in version 1.0.5}{
+  \itemize{
+    \item{plot.HR now invisibly returns the plot data.}
+  }
+}
+
 \section{Changes in version 1.0.4}{
   \itemize{
     \item{Improved the documentation.}
