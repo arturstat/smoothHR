@@ -6,6 +6,7 @@
   \itemize{
     \item{plot.HR now invisibly returns the plot data.}
     \item{Updated CITATION file.}
+    \item{Fixed predict.HR taking wrong reference value.}
   }
 }
 
