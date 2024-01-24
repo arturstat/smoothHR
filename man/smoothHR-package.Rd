@@ -14,7 +14,7 @@ taking a specific covariate value as reference. Confidence bands for these curve
 		Package: \tab smoothHR\cr
 		Type: \tab Package\cr
 		Version: \tab 1.0.5\cr
-		Date: \tab 2023-12-10\cr
+		Date: \tab 2024-01-24\cr
 		License: \tab GPL-3\cr
 		LazyLoad: \tab yes\cr
 		LazyData: \tab yes\cr
