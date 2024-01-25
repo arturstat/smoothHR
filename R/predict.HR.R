@@ -1,13 +1,13 @@
 predict.HR <- function(
-    object,
-    predictor,
-    prob=NULL,
-    pred.value=NULL,
-    conf.level=0.95,
-    prediction.values=NULL,
-    round.x=NULL,
-    ref.label=NULL,
-    ...
+	object,
+	predictor,
+	prob=NULL,
+	pred.value=NULL,
+	conf.level=0.95,
+	prediction.values=NULL,
+	round.x=NULL,
+	ref.label=NULL,
+	...
 ) {
 	if ( !inherits(object, "HR") ) {stop("Object must be of class HR");}
 	mydata <- object$dataset;
@@ -26,19 +26,19 @@ predict.HR <- function(
 	if (k[1] == 9999) {stop("predictor must be in data");}
 	k <- k[1];
 	if ( missing(prediction.values) ) {
-    prediction.values <- c(
-      min(mydata[,k]),
-      quantile( mydata[,k],
-      c(0.05, 0.25, 0.5, 0.75, 0.95) ),
-      max(mydata[,k])
-    );
+		prediction.values <- c(
+			min(mydata[,k]),
+			quantile( mydata[,k],
+			c(0.05, 0.25, 0.5, 0.75, 0.95) ),
+			max(mydata[,k])
+		);
 	}
 	if (
-    min(prediction.values) < min(mydata[,k]) |
-    max(prediction.values) > max(mydata[,k])
-  ) {
-    stop("prediction.values must be between minimum and maximum of the predictor");
-  }
+		min(prediction.values) < min(mydata[,k]) |
+		max(prediction.values) > max(mydata[,k])
+	) {
+		stop("prediction.values must be between minimum and maximum of the predictor");
+	}
 	a <- mydata; # a is our dataset
 	n.predictor <- names(a)[k];
 	n <- dim(a)[1];
@@ -59,11 +59,11 @@ predict.HR <- function(
 		submatriz.var <- fit$var[indices,indices];
 		xref1 <- rep(fit$x[ii,indices], dim(fit$x)[1]);
 		if (linear.predictor == FALSE) {
-      xref1 <- matrix(
-        xref1,
-        nrow=dim(fit$x)[1],
-        ncol=dim(submatriz.diseno)[2],
-        byrow=TRUE
+			xref1 <- matrix(
+				xref1,
+				nrow=dim(fit$x)[1],
+				ncol=dim(submatriz.diseno)[2],
+				byrow=TRUE
 			);
 		}
 		if (linear.predictor == TRUE) {
@@ -72,17 +72,15 @@ predict.HR <- function(
 		eta.ref1 <- fit$x[,indices]-xref1;
 		var.eta.ref1 <- rep(NA, n);
 		for (i in 1:n) {
-		  var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices,indices]%*%eta.ref1[i,];
+			var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices,indices]%*%eta.ref1[i,];
 		}
 		se.eta.ref1 <- sqrt(var.eta.ref1);
-	}
-	else if (prob > 0 & prob < 1) {
+	} else if (prob > 0 & prob < 1) {
 		eta.no.ref <- predict(fit, type="terms");
 		if ( inherits(eta.no.ref, "numeric") ) {
-		  kp <- 1;
-		  eta.no.ref <- cbind(eta.no.ref, eta.no.ref);
-		}
-		else {kp <- grep( predictor, colnames(eta.no.ref) );}
+			kp <- 1;
+			eta.no.ref <- cbind(eta.no.ref, eta.no.ref);
+		} else {kp <- grep( predictor, colnames(eta.no.ref) );}
 		ord <- order(a[,k]);
 		if ( !missing(pred.value) ) {
 			pp <- seq(0, 1, len=1000);
@@ -92,9 +90,9 @@ predict.HR <- function(
 			prob <- qq1/1000;
 		}
 		ind.prob <- ifelse(
-		  test=prob*n-trunc(prob*n)<0.5,
-		  yes=floor(prob*n),
-		  no=ceiling(prob*n)
+			test=prob*n-trunc(prob*n)<0.5,
+			yes=floor(prob*n),
+			no=ceiling(prob*n)
 		);
 		xref <- a[,k][ord[ind.prob]];
 		eta.xref <- eta.no.ref[,kp][ord[ind.prob]];
@@ -106,10 +104,10 @@ predict.HR <- function(
 		xref1 <- rep(fit$x[ord[ind.prob],indices], dim(fit$x)[1]);
 		if (linear.predictor == FALSE) {
 			xref1 <- matrix(
-        xref1,
-        nrow=dim(fit$x)[1],
-        ncol=dim(submatriz.diseno)[2],
-        byrow=TRUE
+				xref1,
+				nrow=dim(fit$x)[1],
+				ncol=dim(submatriz.diseno)[2],
+				byrow=TRUE
 			);
 		}
 		if (linear.predictor == TRUE) {
@@ -118,17 +116,15 @@ predict.HR <- function(
 		eta.ref1 <- fit$x[,indices]-xref1;
 		var.eta.ref1 <- rep(NA, n);
 		for (i in 1:n) {
-		  var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices,indices]%*%eta.ref1[i,];
+			var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices,indices]%*%eta.ref1[i,];
 		}
 		se.eta.ref1 <- sqrt(var.eta.ref1);
-	}
-	else if (prob == 1) {
+	} else if (prob == 1) {
 		eta.no.ref <- predict(fit, type="terms");
 		if ( inherits(eta.no.ref, "numeric") ) {
-		  kp <- 1;
-		  eta.no.ref <- cbind(eta.no.ref, eta.no.ref);
-		}
-		else {kp <- grep( predictor, colnames(eta.no.ref) );}
+			kp <- 1;
+			eta.no.ref <- cbind(eta.no.ref, eta.no.ref);
+		} else {kp <- grep( predictor, colnames(eta.no.ref) );}
 		eta.xref <- max(eta.no.ref[,kp]);
 		ii <- which.max(eta.no.ref[,kp]);
 		xref <- a[ii,k];
@@ -140,10 +136,10 @@ predict.HR <- function(
 		xref1 <- rep(fit$x[ii,indices], dim(fit$x)[1]);
 		if (linear.predictor == FALSE) {
 			xref1 <- matrix(
-        xref1,
-        nrow=dim(fit$x)[1],
-        ncol=dim(submatriz.diseno)[2],
-        byrow=TRUE
+				xref1,
+				nrow=dim(fit$x)[1],
+				ncol=dim(submatriz.diseno)[2],
+				byrow=TRUE
 			);
 		}
 		if (linear.predictor == TRUE) {
@@ -152,24 +148,24 @@ predict.HR <- function(
 		eta.ref1 <- fit$x[,indices]-xref1;
 		var.eta.ref1 <- rep(NA, n);
 		for (i in 1:n) {
-		  var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices,indices]%*%eta.ref1[i,];
+			var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices,indices]%*%eta.ref1[i,];
 		}
 		se.eta.ref1 <- sqrt(var.eta.ref1);
 	}
 	tmat <- cbind(
-    eta.ref,
-    eta.ref-qnorm(qvalue)*se.eta.ref1,
-    eta.ref+qnorm(qvalue)*se.eta.ref1
+		eta.ref,
+		eta.ref-qnorm(qvalue)*se.eta.ref1,
+		eta.ref+qnorm(qvalue)*se.eta.ref1
 	);
 	line <- rep(0, n);
 	jj <- match(sort(unique(a[,k])), a[,k]);
 	pp <- length(jj);
 	mat2 <- c(a[jj[1],k], tmat[jj,1][1], tmat[jj,2][1], tmat[jj,3][1]);
 	for (b in 2:pp) {
-    mat2 <- rbind(
-      mat2,
-      c(a[jj[b],k], tmat[jj,1][b], tmat[jj,2][b], tmat[jj,3][b])
-    );
+	    mat2 <- rbind(
+		mat2,
+		c(a[jj[b],k], tmat[jj,1][b], tmat[jj,2][b], tmat[jj,3][b])
+	    );
 	}
 	matriz <- matrix( 0, ncol=4, nrow=length(prediction.values) );
 	matriz[,1] <- prediction.values;
@@ -180,21 +176,20 @@ predict.HR <- function(
 	}
 	c1 <- conf.level;
 	if ( missing(ref.label) ) {
-    mat.name <- c(
-      names(a)[k],
-      "LnHR",
-      paste("lower .", conf.level*100, sep=""),
-      paste("upper .", conf.level*100, sep="")
-    );
-  }
-	else {
-    mat.name <- c(
-	    ref.label,
-	    "LnHR",
-	    paste("lower .", conf.level*100, sep=""),
-	    paste("upper .", conf.level*100, sep="")
-    );
-  }
+		mat.name <- c(
+			names(a)[k],
+			"LnHR",
+			paste("lower .", conf.level*100, sep=""),
+			paste("upper .", conf.level*100, sep="")
+		);
+	} else {
+		mat.name <- c(
+			ref.label,
+			"LnHR",
+			paste("lower .", conf.level*100, sep=""),
+			paste("upper .", conf.level*100, sep="")
+		);
+	}
 	colnames(matriz) <- mat.name;
 	rownames(matriz) <- rep( "", length(prediction.values) );
 	return(matriz);
