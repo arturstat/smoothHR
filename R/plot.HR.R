@@ -1,7 +1,21 @@
 plot.HR <- function(
-    x, predictor, prob=NULL, pred.value=NULL, conf.level=0.95, round.x=NULL,
-    ref.label=NULL, col, main, xlab, ylab, lty, xlim, ylim, xx, ylog=TRUE,
-    log=ifelse(ylog, "", "y"), ...
+	x,
+	predictor,
+	prob=NULL,
+	pred.value=NULL,
+	conf.level=0.95,
+	round.x=NULL,
+	ref.label=NULL,
+	col, main,
+	xlab,
+	ylab,
+	lty,
+	xlim,
+	ylim,
+	xx,
+	ylog=TRUE,
+	log=ifelse(ylog, "", "y"),
+	...
 ) {
 	object <- x;
 	if ( !inherits(object, "HR") ) {stop("Object must be of class HR");}
@@ -14,9 +28,9 @@ plot.HR <- function(
 	}
 	if ( missing(prob) & missing(pred.value) ) {prob <- 0;}
 	if ( !missing(pred.value) & !missing(xlim) ) {
-    if ( pred.value < min(xlim) | pred.value > max(xlim) ) {
-      stop("The reference value is out of range of 'xlim'");
-    }
+		if ( pred.value < min(xlim) | pred.value > max(xlim) ) {
+			stop("The reference value is out of range of 'xlim'");
+		}
 	}
 	if ( missing(predictor) ) {stop("Missing predictor");}
 	if ( missing(col) ) {col <- c("black", "black", "grey85");}
@@ -37,10 +51,9 @@ plot.HR <- function(
 	if (prob == 0) {
 		eta.no.ref <- predict(fit, type="terms");
 		if ( inherits(eta.no.ref, "numeric") ) {
-		  kp <- 1;
-		  eta.no.ref <- cbind(eta.no.ref, eta.no.ref);
-		}
-		else {kp <- grep( predictor, colnames(eta.no.ref) );}
+			kp <- 1;
+			eta.no.ref <- cbind(eta.no.ref, eta.no.ref);
+		} else {kp <- grep( predictor, colnames(eta.no.ref) );}
 		eta.xref <- min(eta.no.ref[,kp]);
 		ii <- which.min(eta.no.ref[,kp]);
 		xref <- a[ii,k];
@@ -51,23 +64,22 @@ plot.HR <- function(
 		submatriz.var <- fit$var[indices, indices];
 		xref1 <- rep(fit$x[ii, indices], dim(fit$x)[1]);
 		if (linear.predictor) {
-		  xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=1, byrow=TRUE);
+			xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=1, byrow=TRUE);
 		} else {
-		  xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=dim(submatriz.diseno)[2], byrow=TRUE);
+			xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=dim(submatriz.diseno)[2], byrow=TRUE);
 		}
 		eta.ref1 <- fit$x[,indices]-xref1;
 		var.eta.ref1 <- rep(NA, n);
 		for (i in 1:n) {
-		  var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices, indices]%*%eta.ref1[i,];
+			var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices, indices]%*%eta.ref1[i,];
 		}
 		se.eta.ref1 <- sqrt(var.eta.ref1);
 	} else if (prob > 0 & prob < 1) {
 		eta.no.ref <- predict(fit, type="terms");
 		if ( inherits(eta.no.ref, "numeric") ) {
-		  kp <- 1;
-		  eta.no.ref <- cbind(eta.no.ref, eta.no.ref);
-		}
-		else {kp <- grep( predictor, colnames(eta.no.ref) );}
+			kp <- 1;
+			eta.no.ref <- cbind(eta.no.ref, eta.no.ref);
+		} else {kp <- grep( predictor, colnames(eta.no.ref) );}
 		ord <- order(a[,k]);
 		if ( !missing(pred.value) ) {
 			pp <- seq(0, 1, len=1000);
@@ -77,9 +89,9 @@ plot.HR <- function(
 			prob <- qq1/1000;
 		}
 		ind.prob <- ifelse(
-		  test=prob*n-trunc(prob*n)<0.5,
-		  yes=floor(prob*n),
-		  no=ceiling(prob*n)
+			test=prob*n-trunc(prob*n)<0.5,
+			yes=floor(prob*n),
+			no=ceiling(prob*n)
 		);
 		xref <- a[,k][ord[ind.prob]];
 		eta.xref <- eta.no.ref[,kp][ord[ind.prob]];
@@ -90,23 +102,22 @@ plot.HR <- function(
 		submatriz.var <- fit$var[indices, indices];
 		xref1 <- rep(fit$x[ord[ind.prob], indices], dim(fit$x)[1]);
 		if (linear.predictor) {
-		  xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=1, byrow=TRUE);
-		}	else {
-		  xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=dim(submatriz.diseno)[2], byrow=TRUE);
+			xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=1, byrow=TRUE);
+		} else {
+			xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=dim(submatriz.diseno)[2], byrow=TRUE);
 		}
 		eta.ref1 <- fit$x[,indices]-xref1;
 		var.eta.ref1 <- rep(NA, n);
 		for (i in 1:n) {
-		  var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices, indices]%*%eta.ref1[i,];
+			var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices, indices]%*%eta.ref1[i,];
 		}
 		se.eta.ref1 <- sqrt(var.eta.ref1);
 	} else if (prob == 1) {
 		eta.no.ref <- predict(fit, type="terms");
 		if ( inherits(eta.no.ref, "numeric") ) {
-		  kp <- 1;
-		  eta.no.ref <- cbind(eta.no.ref, eta.no.ref);
-		}
-		else {kp <- grep( predictor, colnames(eta.no.ref) );}
+			kp <- 1;
+			eta.no.ref <- cbind(eta.no.ref, eta.no.ref);
+		} else {kp <- grep( predictor, colnames(eta.no.ref) );}
 		eta.xref <- max(eta.no.ref[,kp]);
 		ii <- which.max(eta.no.ref[,kp]);
 		xref <- a[ii,k];
@@ -117,20 +128,20 @@ plot.HR <- function(
 		submatriz.var <- fit$var[indices,indices];
 		xref1 <- rep(fit$x[ii,indices], dim(fit$x)[1]);
 		if (linear.predictor) {
-		  xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=1, byrow=TRUE);
+			xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=1, byrow=TRUE);
 		} else {
-		  xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=dim(submatriz.diseno)[2], byrow=TRUE);
+			xref1 <- matrix(xref1, nrow=dim(fit$x)[1], ncol=dim(submatriz.diseno)[2], byrow=TRUE);
 		}
 		eta.ref1 <- fit$x[,indices]-xref1;
 		var.eta.ref1 <- rep(NA,n);
 		for (i in 1:n) {
-		  var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices,indices]%*%eta.ref1[i,];
+			var.eta.ref1[i] <- eta.ref1[i,]%*%fit$var[indices,indices]%*%eta.ref1[i,];
 		}
 		se.eta.ref1 <- sqrt(var.eta.ref1);
 	}
 	if ( missing(main) ) {
-	  if (ylog) {main <- paste("Smooth log hazard ratio for", names(a)[k]);}
-	  else {main <- paste("Smooth hazard ratio for", names(a)[k]);}
+		if (ylog) {main <- paste("Smooth log hazard ratio for", names(a)[k]);}
+		else {main <- paste("Smooth hazard ratio for", names(a)[k]);}
 	}
 	tmat <- cbind(eta.ref, eta.ref-qnorm(qvalue)*se.eta.ref1, eta.ref+qnorm(qvalue)*se.eta.ref1);
 	if (!ylog) tmat <- exp(tmat);
@@ -144,18 +155,18 @@ plot.HR <- function(
 	}
 	if ( missing(ylim) ) {ylim <- c( min(tmat[,2]), max(tmat[,3]) );}
 	if ( xref < min(a[,k]) | xref > max(a[,k]) ) {
-	  stop("The reference value is out of range of x");
+		stop("The reference value is out of range of x");
 	}
 	if ( xref < min(xlim) | xref > max(xlim) ) {
-	  stop("The reference value is out of range of 'xlim'");
+		stop("The reference value is out of range of 'xlim'");
 	}
 	matplot(
-	  x=a[jj,k], y=tmat[jj,], type="l", lty=c(1, 5, 5, 2), col=c(1, 2, 2, 1),
-	  xlab=xlab, ylab=ylab, xlim=xlim, ylim=ylim, log=log, xaxt="n", main=main, ...
+		x=a[jj,k], y=tmat[jj,], type="l", lty=c(1, 5, 5, 2), col=c(1, 2, 2, 1),
+		xlab=xlab, ylab=ylab, xlim=xlim, ylim=ylim, log=log, xaxt="n", main=main, ...
 	);
 	xxx <- round( seq(min(a[,k]), max(a[,k]),len=5) );
 	if ( missing(xx) ) {
-	  xx <- c( min(a[,k]), round(xref,1), xxx[2], xxx[3], xxx[4], max(a[,k]) );
+		xx <- c( min(a[,k]), round(xref,1), xxx[2], xxx[3], xxx[4], max(a[,k]) );
 	}
 	axis(1, xx, ...);
 	m <- length(jj);
