@@ -76,7 +76,11 @@ plot.HR <- function(
 			qq1 <- max(qq);
 			prob <- qq1/1000;
 		}
-		ind.prob <- trunc(prob*n);
+		ind.prob <- ifelse(
+		  test=prob*n-trunc(prob*n)<0.5,
+		  yes=floor(prob*n),
+		  no=ceiling(prob*n)
+		);
 		xref <- a[,k][ord[ind.prob]];
 		eta.xref <- eta.no.ref[,kp][ord[ind.prob]];
 		eta.ref <- eta.no.ref[,kp]-eta.xref;
