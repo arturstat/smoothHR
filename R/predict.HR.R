@@ -47,8 +47,7 @@ predict.HR <- function(
 		if ( inherits(eta.no.ref, "numeric") ) {
 			kp <- 1;
 			eta.no.ref <- cbind(eta.no.ref, eta.no.ref);
-		}
-		else {kp <- grep( predictor, colnames(eta.no.ref) );}
+		} else {kp <- grep( predictor, colnames(eta.no.ref) );}
 		eta.xref <- min(eta.no.ref[,kp]);
 		ii <- which.min(eta.no.ref[,kp]);
 		xref <- a[ii,k];
