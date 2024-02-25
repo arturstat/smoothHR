@@ -12,9 +12,21 @@ url <- paste("https://CRAN.R-project.org/package=", PKG, sep="");
 bibentry(
 	bibtype     = "Manual",
 	title       = paste(PKG, ": ", title, sep=""),
-	author      = personList(
-                  as.person("Artur Ara\\'{u}jo"),
-                  as.person("Lu\\'{i}s Meira-Machado")
+	author      = c(
+                  person(
+                    given = "Artur",
+                    family = "Araújo",
+                    role = c("aut", "cre"),
+                    email = "artur.stat@gmail.com",
+                    comment = c(ORCID = "0000-0003-1419-4208")
+                  ),
+                  person(
+                    given = "Luís",
+                    family = "Meira-Machado",
+                    role = "aut",
+                    email = "lmachado@math.uminho.pt",
+                    comment = c(ORCID = "0000-0002-8577-7665")
+                  )
                 ),
 	year        = year,
 	note        = vers,
@@ -28,12 +40,36 @@ bibentry(
 bibentry(
   bibtype     = "Article",
   title       = "smoothHR: An R Package for Pointwise Nonparametric Estimation of Hazard Ratio Curves of Continuous Predictors",
-  author      = personList(
-                  as.person("Lu\\'{i}s Meira-Machado"),
-                  as.person("Carmen Cadarso-Su\\'{a}rez"),
-                  as.person("Francisco Gude"),
-                  as.person("Artur Ara\\'{u}jo")
-                ),
+  author      = c(
+                  person(
+                    given = "Luís",
+                    family = "Meira-Machado",
+                    role = "aut",
+                    email = "lmachado@math.uminho.pt",
+                    comment = c(ORCID = "0000-0002-8577-7665")
+                  ),
+                  person(
+                    given = "Carmen",
+                    family = "Cadarso-Suárez",
+                    role = "aut",
+                    email = "",
+                    comment = c(ORCID = "0000-0002-9893-9520")
+                  ),
+                  person(
+                    given = "Francisco",
+                    family = "Gude",
+                    role = "aut",
+                    email = "francisco.gude.sampedro@sergas.es",
+                    comment = c(ORCID = "0000-0002-9681-1662")
+                  ),
+                  person(
+                    given = "Artur",
+                    family = "Araújo",
+                    role = "aut",
+                    email = "artur.stat@gmail.com",
+                    comment = c(ORCID = "0000-0003-1419-4208")
+                  )
+              ),
   journal     = "Computational and Mathematical Methods in Medicine",
   issn        = "1748-6718",
   year        = "2013",
